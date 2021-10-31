@@ -15,7 +15,7 @@ deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-backports main restricte
 deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ bionic-security main restricted universe multiverse
 EOF
 
-apt update && apt install -y net-tools resolvconf
+apt -y update && apt -y upgrade && apt install -y net-tools resolvconf
 
 
 # add nameserver so that external domains could be resolved inside pods
