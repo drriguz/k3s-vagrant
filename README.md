@@ -38,6 +38,7 @@ To access cluster directly from host use `kubectl` command, do:
 ```bash
 mkdir -p ~/.kube
 vagrant ssh -c "sudo cat /etc/rancher/k3s/k3s.yaml" > ~/.kube/config
+sed -i 's/127\.0\.0\.1/192\.168\.79\.100/g' ~/.kube/config
 ```
 
 And then modify the ip address to the master ip address, eg:
