@@ -70,3 +70,14 @@ All available configurations are listed at the beginning of Vagrantfile:
 * NODE_MEMORY   = 4096
 
 If you would like to customize it, modify the value and then start installation.
+
+## Use local cache
+
+Manually download k3s binaries, and put it into ./cache/version, eg.
+
+```
+cache\
+    v1.19.15+k3s2\
+        sha256sum-amd64.txt
+        k3s
+```

@@ -10,9 +10,10 @@ NODE_IP=$NODE_IP
 K3S_VERSION=$K3S_VERSION
 
 echo "token=${TOKEN}, masterIp=${MASTER_IP} nodeIp=${NODE_IP}"
-curl -sfL https://get.k3s.io | \
-    INSTALL_K3S_EXEC="--node-external-ip $NODE_IP --flannel-iface=enp0s8" \
+
+chmod +x /home/vagrant/k3s-install.sh
+INSTALL_K3S_EXEC="--node-external-ip $NODE_IP --flannel-iface=enp0s8" \
     INSTALL_K3S_VERSION="${K3S_VERSION}" \
     K3S_URL="https://${MASTER_IP}:6443" \
     K3S_TOKEN="$TOKEN" \
-    sh -
+    /home/vagrant/k3s-install.sh
